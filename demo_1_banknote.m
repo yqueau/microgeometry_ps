@@ -24,11 +24,11 @@ i = 1;
 ii = images(i);
 load(sprintf('%s/light_%02d.mat',calib_folder,ii));
 S = zeros(size(S_i,1),size(S_i,2),size(S_i,3),length(images));
-S(:,:,:,1) = S_i; 
+S(:,:,:,1) = double(S_i); 
 for i = 2:length(images)
 	ii = images(i);
 	load(sprintf('%s/light_%02d.mat',calib_folder,ii));
-	S(:,:,:,i) = S_i;
+	S(:,:,:,i) = double(S_i);
 end
 clear S_i
 % Store in a compact structure
